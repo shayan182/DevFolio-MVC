@@ -11,10 +11,16 @@ namespace DevFolio_MVC.Controllers
 {
     public class HomeController : Controller
     {
-
+        [HttpGet]
         public IActionResult Index()
         {
-            return View();
+            var model = new Message();
+            return View(model);
+        }
+        [HttpPost]
+           public IActionResult Index(Message form)
+        {
+            return Json(Ok());
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

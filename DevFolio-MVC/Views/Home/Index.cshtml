@@ -1,4 +1,4 @@
-﻿
+﻿@model Message
 @{
     ViewData["Title"] = "Home Page";
 }
@@ -355,33 +355,37 @@
                                             </h5>
                                         </div>
                                         <div>
-                                            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                                            <form asp-action="Index" method="post" role="form" class="php-email-form">
                                                 <div class="row">
                                                     <div class="col-md-12 mb-3">
                                                         <div class="form-group">
-                                                            <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                                                            <input type="text" asp-for="Name" class="form-control" placeholder="Your Name" >
+                                                            <span asp-validation-for="Name" class="text-danger"></span>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-12 mb-3">
                                                         <div class="form-group">
-                                                            <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                                                            <input type="email" class="form-control" asp-for="Email" placeholder="Your Email" >
+                                                            <span asp-validation-for="Email" class="text-danger"></span>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-12 mb-3">
                                                         <div class="form-group">
-                                                            <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+                                                            <input type="text" class="form-control" asp-for="Subject" placeholder="Subject" >
+                                                            <span asp-validation-for="Subject" class="text-danger"></span>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-12">
                                                         <div class="form-group">
-                                                            <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+                                                            <textarea class="form-control" asp-for="message" rows="5" placeholder="Message" ></textarea>
+                                                            <span asp-validation-for="message" class="text-danger"></span>
                                                         </div>
                                                     </div>
-                                                    <div class="col-md-12 text-center my-3">
+                                                    @*<div class="col-md-12 text-center my-3">
                                                         <div class="loading">Loading</div>
                                                         <div class="error-message"></div>
                                                         <div class="sent-message">Your message has been sent. Thank you!</div>
-                                                    </div>
+                                                    </div>*@
                                                     <div class="col-md-12 text-center">
                                                         <button type="submit" class="button button-a button-big button-rouded">Send Message</button>
                                                     </div>
@@ -460,6 +464,9 @@
     <script src="~/assets/vendor/typed.js/typed.min.js"></script>
 
     <!-- Template Main JS File -->
-    <script src="~/assets/js/main.js"></script>
+<script src="~/assets/js/main.js"></script>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
 
 </div>
