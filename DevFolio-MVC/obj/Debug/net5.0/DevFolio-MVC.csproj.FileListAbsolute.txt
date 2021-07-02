@@ -115,3 +115,5 @@ D:\Shayan\project\DevFolio-MVC\DevFolio-MVC\DevFolio-MVC\bin\Debug\net5.0\runtim
 D:\Shayan\project\DevFolio-MVC\DevFolio-MVC\DevFolio-MVC\bin\Debug\net5.0\runtimes\win-arm64\lib\net5.0\dotnet-aspnet-codegenerator-design.exe
 D:\Shayan\project\DevFolio-MVC\DevFolio-MVC\DevFolio-MVC\obj\Debug\net5.0\Razor\Views\Home\Components\Projects\_Projects.cshtml.g.cs
 D:\Shayan\project\DevFolio-MVC\DevFolio-MVC\DevFolio-MVC\obj\Debug\net5.0\Razor\Views\Home\Components\Blog\_Blog.cshtml.g.cs
+D:\Shayan\project\DevFolio-MVC\DevFolio-MVC\DevFolio-MVC\obj\Debug\net5.0\Razor\Views\Home\ProjectDetails.cshtml.g.cs
+D:\Shayan\project\DevFolio-MVC\DevFolio-MVC\DevFolio-MVC\obj\Debug\net5.0\Razor\Views\Home\BlogDetails.cshtml.g.cs

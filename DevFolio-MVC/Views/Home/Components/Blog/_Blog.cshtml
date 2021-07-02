@@ -21,7 +21,7 @@
             <div class="col-md-4">
                 <div class="card card-blog">
                     <div class="card-img">
-                        <a href="blog-single.html"><img src="assets/img/@blog.Image" alt="@blog.Image" class="img-fluid"></a>
+                        <a asp-controller="Home" asp-action="BlogDetails" asp-route-id="@blog.Id"><img src="assets/img/@blog.Image" alt="@blog.Image" class="img-fluid"></a>
                     </div>
                     <div class="card-body">
                         <div class="card-category-box">
@@ -29,7 +29,7 @@
                                 <h6 class="category">@blog.Category</h6>
                             </div>
                         </div>
-                        <h3 class="card-title"><a href="blog-single.html">@blog.Title</a></h3>
+                        <h3 class="card-title"><a asp-controller="Home" asp-action="BlogDetails" asp-route-id="@blog.Id">@blog.Title</a></h3>
                         <p class="card-description">
                           @blog.Description
                         </p>
@@ -37,7 +37,7 @@
                     <div class="card-footer">
                         <div class="post-author">
                             <a href="#">
-                                <img src="assets/img/testimonial-2.jpg" alt="" class="avatar rounded-circle">
+                                <img src="~/assets/img/testimonial-2.jpg" alt="" class="avatar rounded-circle">
                                 <span class="author">@blog.Client</span>
                             </a>
                         </div>

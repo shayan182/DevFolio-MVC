@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using DevFolio_MVC.Data;
 
 namespace DevFolio_MVC.Controllers
 {
@@ -30,10 +31,15 @@ namespace DevFolio_MVC.Controllers
             return View();
           }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
+          public IActionResult ProjectDetails(int id)
+          {
+              var project = ProjectsData.GetProjectBy(id);
+              return View(project);
+          }
+          public IActionResult BlogDetails(int id)
+          {
+              var Blog = BlogsData.GetBlogBy(id);
+              return View(Blog);
+          }
     }
 }
