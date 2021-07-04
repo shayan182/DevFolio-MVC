@@ -1,11 +1,5 @@
 ﻿using DevFolio_MVC.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
 using DevFolio_MVC.Data;
 
 namespace DevFolio_MVC.Controllers
@@ -36,10 +30,25 @@ namespace DevFolio_MVC.Controllers
               var project = ProjectsData.GetProjectBy(id);
               return View(project);
           }
+         [HttpGet]
           public IActionResult BlogDetails(int id)
           {
-              var Blog = BlogsData.GetBlogBy(id);
-              return View(Blog);
+            // i Implementation validation for form in blogDetails but i need to send two model in view and I do not know how to do it
+            var comment = new Comment(); // pass this variable to validation form Of course you must be comment blog details in BlogDetails.cshtml and two more oncomment
+            var blog = BlogsData.GetBlogBy(id);
+              return View(blog);
           }
+          [HttpPost]
+          public IActionResult BlogDetails(Comment form)
+          {
+            if (!ModelState.IsValid)
+            {
+                ViewBag.Error = "The information entered is incorrect ! please try again.";
+               // return View(form);
+            }
+            ModelState.Clear();
+            ViewBag.Success = "Your message was sent successfully!";
+            return View();
+        }
     }
 }

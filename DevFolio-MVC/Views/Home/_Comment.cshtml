@@ -1,0 +1,32 @@
+﻿@model Comment
+<form class="form-mf" method="post" asp-controller="Home" asp-action="BlogDetails" role="form">
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <div class="form-group">
+                <input type="text" class="form-control input-mf" asp-for="Name" placeholder="Name *">
+                <span asp-validation-for="Name"></span>
+            </div>
+        </div>
+        <div class="col-md-6 mb-3">
+            <div class="form-group">
+                <input type="email" class="form-control input-mf" asp-for="Email" placeholder="Email *">
+                <span asp-validation-for="Email"></span>
+            </div>
+        </div>
+        <div class="col-md-12 mb-3">
+            <div class="form-group">
+                <input type="url" class="form-control input-mf" asp-for="Website" placeholder="Website">
+                <span asp-validation-for="Website"></span>
+            </div>
+        </div>
+        <div class="col-md-12 mb-3">
+            <div class="form-group">
+                <textarea asp-for="Text" class="form-control input-mf" placeholder="Comment *" cols="45" rows="8"></textarea>
+                <span asp-validation-for="Text"></span>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <button type="submit" class="button button-a button-big button-rouded">Send Message</button>
+        </div>
+    </div>
+</form>

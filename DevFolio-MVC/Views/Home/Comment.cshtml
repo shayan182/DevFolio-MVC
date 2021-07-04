@@ -1,0 +1,54 @@
+﻿@model Comment
+<div class="form-comments">
+    <div class="title-box-2">
+        <h3 class="title-left">
+            Leave a Reply
+        </h3>
+        @if (!string.IsNullOrWhiteSpace(ViewBag.success))
+        {
+            <div class="alert-success p-2">
+                <p>@ViewBag.success</p>
+            </div>
+        }
+        @if (!string.IsNullOrWhiteSpace(ViewBag.error))
+        {
+            <div class="alert-danger p-2">
+                <p>@ViewBag.error</p>
+            </div>
+        }
+    </div>
+    <form class="form-mf" asp-controller="Home" asp-action="BlogDetails">
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <div class="form-group">
+                    <input type="text" class="form-control input-mf" asp-for="Name" placeholder="Name *" >
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-6 mb-3">
+                <div class="form-group">
+                    <input type="email" class="form-control input-mf" asp-for="Email" placeholder="Email *" >
+                    <span asp-validation-for="Email" class="text-danger"></span>
+
+                </div>
+            </div>
+            <div class="col-md-12 mb-3">
+                <div class="form-group">
+                    <input type="url" class="form-control input-mf" asp-for="Website" placeholder="Website">
+                    <span asp-validation-for="Website" class="text-danger"></span>
+
+                </div>
+            </div>
+            <div class="col-md-12 mb-3">
+                <div class="form-group">
+                    <textarea  class="form-control input-mf" placeholder="Comment *" asp-for="Text"cols="45" rows="8" ></textarea>
+                    <span asp-validation-for="Text" class="text-danger"></span>
+
+                </div>
+            </div>
+            <div class="col-md-12">
+                <button type="submit" class="button button-a button-big button-rouded">Send Message</button>
+            </div>
+        </div>
+    </form>
+</div>
